@@ -9,7 +9,7 @@ load_dotenv()
 
 
 class ModuleManager:
-    ddef __init__(self, app):
+    def __init__(self, app):
     self.app = app
     self.base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     working_dir = os.getenv("WORKING_DIR", self.base_dir)
