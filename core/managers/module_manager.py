@@ -15,8 +15,7 @@ class ModuleManager:
         working_dir = os.getenv("WORKING_DIR", "") 
         self.modules_dir = os.path.join(working_dir, "app/modules") 
         self.ignored_modules_file = os.path.join(working_dir, ".moduleignore") 
-        self.ignored_modules = 
-        self._load_ignored_modules()
+        self.ignored_modules = self._load_ignored_modules()
 
 
     def _load_ignored_modules(self):
