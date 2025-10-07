@@ -9,20 +9,14 @@ load_dotenv()
 
 
 class ModuleManager:
-    def __init__(self, app):
-        self.app = app
-        self.base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-        working_dir = os.getenv("WORKING_DIR")
-        if not working_dir or not os.path.exists(working_dir):
-            working_dir = self.base_dir
-        self.modules_dir = os.path.join(working_dir, "app", "modules")
-        self.ignored_modules_file = os.path.join(working_dir, ".moduleignore")
-        print(f"[INFO] Base dir: {self.base_dir}")
-        print(f"[INFO] Working dir: {working_dir}")
-        print(f"[INFO] Modules dir: {self.modules_dir}")
-
-        self.ignored_modules = self._load_ignored_modules()
-
+    def __init__(self, app): 
+        self.app = app 
+        self.base_dir = os.path.abspath(os.path.dirname(__file__)) 
+        working_dir = os.getenv("WORKING_DIR", "") 
+        self.modules_dir = os.path.join(working_dir, "app/modules") 
+        self.ignored_modules_file = os.path.join(working_dir, ".moduleignore") 
+        self.ignored_modules = 
+        self._load_ignored_modules()
 
 
     def _load_ignored_modules(self):
